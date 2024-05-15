@@ -30,7 +30,7 @@ a = Analysis(
         'nltk.data',
         'nltk.tokenize',
     ],
-    hookspath=[./hooks'],
+    hookspath=[/hooks'],
     hooksconfig={},
     runtime_hooks=[],
     excludes=['pydoc'],
