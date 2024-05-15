@@ -12,6 +12,7 @@ a = Analysis(
     datas=[('voice.ico', 'voice.ico')],
     hiddenimports=[
         'speech_recognition',
+        'pydoc',
         'transformers',
         'docx',
         'PyQt5.QtCore',
