@@ -1,14 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import os
+os.environ['QT_DEBUG_PLUGINS'] = '1'
 
 block_cipher = None
 
-
 a = Analysis(
     ['main.py'],
-    pathex=['.'],  # 確保當前目錄在搜索路徑中
+    pathex=['.'],
     binaries=[],
-    datas=[('voice.ico', 'voice.ico')],  # 如果有其他資源文件，添加它們
+    datas=[('icon.ico', 'icon.ico')],
     hiddenimports=[
         'speech_recognition',
         'transformers',
@@ -29,6 +30,7 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
+
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
@@ -50,6 +52,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
 )
+
 coll = COLLECT(
     exe,
     a.binaries,
