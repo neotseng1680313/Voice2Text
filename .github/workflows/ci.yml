@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # 更新到 v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # 更新到 v4
       with:
         python-version: '3.8'
 
@@ -24,12 +24,20 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
 
+    - name: Run tests
+      run: |
+        python -m unittest discover -s tests
+
+    - name: Set up version
+      id: version
+      run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+
     - name: Build with PyInstaller
       run: |
-        pyinstaller build.spec  # 使用正確的 .spec 文件名
+        pyinstaller --name Voice2Text_${{ env.VERSION }} build.spec
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4  # 更新到 v4
       with:
         name: built-application
         path: dist/
