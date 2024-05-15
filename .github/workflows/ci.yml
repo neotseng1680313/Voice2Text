@@ -30,7 +30,14 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller build.spec
+        pyinstaller --debug=all main.spec
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller
+        pip install pyqt5-tools  # 添加 PyQt5 相關工具
+
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4  # 更新到 v4
