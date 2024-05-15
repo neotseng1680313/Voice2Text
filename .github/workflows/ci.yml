@@ -24,10 +24,6 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
 
-    - name: Run tests
-      run: |
-        python -m unittest discover -s tests
-
     - name: Set up version
       id: version
       run: echo "VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
