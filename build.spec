@@ -9,7 +9,7 @@ a = Analysis(
     ['main.py'],
     pathex=['.'],
     binaries=[],
-    datas=[('icon.ico', 'icon.ico')],
+    datas=[('voice.ico', 'voice.ico')],
     hiddenimports=[
         'speech_recognition',
         'transformers',
