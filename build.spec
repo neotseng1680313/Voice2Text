@@ -25,6 +25,10 @@ a = Analysis(
         'PyQt5.QtCore',
         'PyQt5.QtGui',
         'PyQt5.QtWidgets',
+        'nltk.corpus.reader',  # 添加其他 nltk 模块
+        'nltk.corpus.util',
+        'nltk.data',
+        'nltk.tokenize',
     ],
     hookspath=[],
     hooksconfig={},
