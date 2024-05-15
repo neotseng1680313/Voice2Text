@@ -26,7 +26,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile your_script.spec
+        pyinstaller your_script.spec
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
