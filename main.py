@@ -1,4 +1,6 @@
 import sys
+import sip  # 确保 sip 被导入
+import pydoc  # 确保 pydoc 被导入
 from os import environ
 from PyQt5 import QtWidgets, QtCore
 from New_Ui import Ui_MainWindow  # 確保引用的是 New_Ui.py 中的正確類名
