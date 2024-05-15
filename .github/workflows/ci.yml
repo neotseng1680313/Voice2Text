@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # 修改为 Windows 环境
 
     steps:
     - name: Checkout repository
@@ -30,7 +30,6 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        ls -al  # 列出当前目录中的所有文件，以确保 build.spec 文件存在
         pyinstaller build.spec
 
     - name: Upload artifact
