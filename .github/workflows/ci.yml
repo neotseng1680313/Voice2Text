@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # 更新到 v3
+      uses: actions/checkout@v4  # 更新到 v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # 更新到 v4
+      uses: actions/setup-python@v4  # 确认 v4 使用 Node.js 20
       with:
         python-version: '3.8'
 
@@ -30,6 +30,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
+        ls -al  # 列出当前目录中的所有文件，以确保 build.spec 文件存在
         pyinstaller build.spec
 
     - name: Upload artifact
