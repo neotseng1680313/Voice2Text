@@ -30,7 +30,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --debug=all main.spec
+        pyinstaller --debug=all build.spec
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
